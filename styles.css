@@ -93,8 +93,10 @@ body::before {
 
 .hero,
 .about,
+.routine,
 .sport-section,
 .moments,
+.cta,
 .site-footer {
   border: 1px solid var(--line);
   border-radius: 32px;
@@ -151,6 +153,39 @@ body::before {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 28px;
+}
+
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.hero-metrics article {
+  padding: 14px 16px;
+  border: 1px solid rgba(20, 40, 29, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.hero-metrics strong,
+.routine-card span {
+  display: block;
+  font-family: "Bebas Neue", sans-serif;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.hero-metrics strong {
+  font-size: 2rem;
+}
+
+.hero-metrics span {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
 }
 
 .button {
@@ -235,8 +270,10 @@ body::before {
 }
 
 .about,
+.routine,
 .sport-section,
 .moments,
+.cta,
 .site-footer {
   margin-top: 24px;
   padding: 40px;
@@ -255,6 +292,69 @@ body::before {
 
 .about-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.routine-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+  margin-top: 22px;
+}
+
+.routine-cards {
+  display: grid;
+  gap: 16px;
+}
+
+.routine-card,
+.routine-quote {
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid rgba(20, 40, 29, 0.08);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.routine-card span {
+  margin-bottom: 12px;
+  font-size: 2.1rem;
+  color: var(--soccer);
+}
+
+.routine-card h3,
+.routine-quote blockquote {
+  margin: 0;
+}
+
+.routine-card h3 {
+  font-size: 1.15rem;
+}
+
+.routine-card p,
+.routine-quote p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.routine-quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background:
+    linear-gradient(160deg, rgba(20, 40, 29, 0.96), rgba(10, 127, 66, 0.92) 60%, rgba(176, 106, 43, 0.84));
+  color: #fff7ef;
+}
+
+.routine-quote .eyebrow,
+.routine-quote p {
+  color: rgba(255, 247, 239, 0.82);
+}
+
+.routine-quote blockquote {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.3rem, 5vw, 3.5rem);
+  line-height: 0.98;
+  letter-spacing: 0.03em;
 }
 
 .sport-layout {
@@ -369,6 +469,24 @@ body::before {
   font-size: 1.2rem;
 }
 
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background:
+    linear-gradient(135deg, rgba(255, 248, 235, 0.88), rgba(255, 255, 255, 0.45)),
+    radial-gradient(circle at top right, rgba(10, 127, 66, 0.18), transparent 34%);
+}
+
+.cta h2 {
+  margin: 0;
+  max-width: 14ch;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 0.95;
+}
+
 .site-footer {
   text-align: center;
 }
@@ -390,10 +508,12 @@ body::before {
 
 @media (max-width: 900px) {
   .hero,
+  .routine-layout,
   .sport-layout,
   .sport-layout.reverse,
   .about-grid,
-  .moment-grid {
+  .moment-grid,
+  .hero-metrics {
     grid-template-columns: 1fr;
   }
 
@@ -403,6 +523,11 @@ body::before {
 
   .hero-panel {
     min-height: auto;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -433,8 +558,10 @@ body::before {
 
   .hero,
   .about,
+  .routine,
   .sport-section,
   .moments,
+  .cta,
   .site-footer {
     padding: 24px;
   }
